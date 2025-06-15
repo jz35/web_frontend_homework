@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>紫金山摄影作品 - zjz的个人网站</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/article.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <style>
+        .creative-theme {
+            background: rgba(253, 246, 236, 0.95);
+        }
+        .gallery-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+        }
+        .photo-thumb {
+            width: 260px;
+            height: 180px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px var(--shadow-color);
+            cursor: pointer;
+            transition: transform 0.3s cubic-bezier(.4, 2, .6, 1), box-shadow 0.3s;
+            position: relative;
+            border: 2px solid var(--border-color);
+        }
+        .photo-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.35s cubic-bezier(.4, 2, .6, 1);
+            display: block;
+        }
+        .photo-thumb:hover img {
+            transform: scale(1.12);
+        }
+        .photo-thumb.blur img {
+            filter: blur(6px) grayscale(60%);
+            transition: filter 0.3s;
+        }
+        /* 大图弹窗 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1002;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.85);
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s;
+        }
+        .modal.active {
+            display: flex;
+        }
+        .modal-img {
+            max-width: 90vw;
+            max-height: 80vh;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            background: #222;
+        }
+        .modal-close {
+            position: fixed;
+            top: 32px;
+            right: 48px;
+            font-size: 2.2rem;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.25);
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1003;
+            transition: background 0.2s;
+        }
+        .modal-close:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @media (max-width: 700px) {
+            .gallery-container {
+                gap: 10px;
+            }
+            .photo-thumb {
+                width: 98vw;
+                height: 30vw;
+                min-height: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body class="creative-theme">
+    <a href="photograph_work.html" class="back-btn">返回摄影作品</a>
+    
+    <div class="main-content">
+        <div class="gallery-container">
+            <!-- 11张图片缩略图 -->
+            <div class="photo-thumb"><img src="../assets/img/photo_ZiJinMount/001.jpg" alt="紫金山1"></div>
+            <div class="photo-thumb"><img src="../assets/img/photo_ZiJinMount/002.JPG" alt="紫金山2"></div>
+            <div class="photo-thumb"><img src="../assets/img/photo_ZiJinMount/003.JPG" alt="紫金山3"></div>
+            <div class="photo-thumb"><img src="../assets/img/photo_ZiJinMount/004.JPG" alt="紫金山4"></div>
+            <div class="photo-thumb"><img src="../assets/img/photo_ZiJinMount/005.JPG" alt="紫金山5"></div>
+            <div class="photo-thumb"><img src="../assets/img/photo_ZiJinMount/006.JPG" alt="紫金山6"></div>
+            <div class="photo-thumb"><img src="../assets/img/photo_ZiJinMount/007.JPG" alt="紫金山7"></div>
+            <div class="photo-thumb"><img src="../assets/img/photo_ZiJinMount/008.JPG" alt="紫金山8"></div>
+            <div class="photo-thumb"><img src="../assets/img/photo_ZiJinMount/009.JPG" alt="紫金山9"></div>
+            <div class="photo-thumb"><img src="../assets/img/photo_ZiJinMount/010.JPG" alt="紫金山10"></div>
+            <div class="photo-thumb"><img src="../assets/img/photo_ZiJinMount/011.JPG" alt="紫金山11"></div>
+        </div>
+        
+        <div class="footer-motto">
+            <h3>仰望星空，脚踏实地</h3>
+        </div>
+    </div>
+    
+    <!-- 大图弹窗 -->
+    <div class="modal" id="modal">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <img class="modal-img" id="modalImg" src="" alt="大图">
+    </div>
+    <script>
+        const thumbs = document.querySelectorAll('.photo-thumb');
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modalImg');
+        const modalClose = document.getElementById('modalClose');
+        let currentIdx = -1;
+        thumbs.forEach((thumb, idx) => {
+            thumb.addEventListener('click', function (e) {
+                e.stopPropagation();
+                currentIdx = idx;
+                modalImg.src = thumb.querySelector('img').src;
+                modal.classList.add('active');
+                thumbs.forEach((t, i) => {
+                    if (i !== idx) t.classList.add('blur');
+                    else t.classList.remove('blur');
+                });
+            });
+        });
+        // 关闭大图
+        function closeModal() {
+            modal.classList.remove('active');
+            thumbs.forEach(t => t.classList.remove('blur'));
+        }
+        modalClose.addEventListener('click', closeModal);
+        // 点击弹窗背景关闭
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) closeModal();
+        });
+        // 按ESC关闭
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
+
+</html>

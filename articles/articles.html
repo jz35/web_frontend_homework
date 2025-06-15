@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章 - zjz的个人网站</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/articles.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <!-- 使用Font Awesome图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="creative-theme">
+    <div class="toggle-btn" id="toggleBtn">☰</div>
+    
+    <!-- 侧边栏 -->
+    <div class="sidebar" id="sidebar">
+        <div class="profile">
+            <div class="name">zjz</div>
+        </div>
+        <ul class="menu">
+            <li><a href="../index.html">主页</a></li>
+            <li><a href="../self_introduction.html">个人介绍</a></li>
+            <li><a href="../open_project/open_project.html">开源项目</a></li>
+            <li><a href="../photograph_work/photograph_work.html">摄影作品</a></li>
+            <li><a href="articles.html" class="active">文章</a></li>
+            <li><a href="../recommend.html">推荐资源</a></li>
+            <li><a href="../message.html">留言板</a></li>
+        </ul>
+    </div>
+
+    <!-- 主内容区域 -->
+    <div class="main-content">
+        <div class="page-header">
+            <h1 class="page-title">文章</h1>
+            <div class="sort-controls">
+                <button id="sortByDate" class="sort-btn active">按时间排序</button>
+                <button id="sortByViews" class="sort-btn">按浏览量排序</button>
+            </div>
+        </div>
+
+        <!-- 标签筛选 -->
+        <div class="filter-container">
+            <div class="filter-title">按标签筛选：</div>
+            <div class="tag-filters">
+                <div class="tag-filter tag-filter-all active" data-tag="all">全部</div>
+                <div class="tag-filter tag-filter-diary" data-tag="diary">日记</div>
+                <div class="tag-filter tag-filter-paper" data-tag="paper">论文</div>
+                <div class="tag-filter tag-filter-book" data-tag="book">书评</div>
+                <div class="tag-filter tag-filter-film" data-tag="film">影评</div>
+                <div class="tag-filter tag-filter-prose" data-tag="prose">随笔</div>
+            </div>
+        </div>
+
+        <div class="catalog-list">
+            <a href="articles_film_commend.html" class="catalog-item" data-date="2025-05-20" data-views="0" data-tag="film">
+                <div class="item-info">
+                    <h2 class="item-title">《罗生门》与马克思主义真理观</h2>
+                    <div class="item-description">从多视角叙事探讨真相的相对性与客观性</div>
+                    <div class="item-meta">
+                        <div class="item-date">
+                            <i class="fas fa-calendar-alt item-icon"></i>
+                            2025-05-20
+                        </div>
+                        <div class="item-views">
+                            <i class="fas fa-eye item-icon"></i>
+                            0次浏览
+                        </div>
+                        <div class="item-category">
+                            <i class="fas fa-tag item-icon"></i>
+                            影评
+                        </div>
+                    </div>
+                    <div class="item-tags">
+                        <span class="tag tag-film">影评</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="articles_book_phantom.html" class="catalog-item" data-date="2025-02-15" data-views="0" data-tag="book">
+                <div class="item-info">
+                    <h2 class="item-title">《幻象》阅读记录</h2>
+                    <div class="item-description">关于伪事件特点及其如何盖过自然事件的分析</div>
+                    <div class="item-meta">
+                        <div class="item-date">
+                            <i class="fas fa-calendar-alt item-icon"></i>
+                            2025-02-15
+                        </div>
+                        <div class="item-views">
+                            <i class="fas fa-eye item-icon"></i>
+                            0次浏览
+                        </div>
+                        <div class="item-category">
+                            <i class="fas fa-tag item-icon"></i>
+                            书评
+                        </div>
+                    </div>
+                    <div class="item-tags">
+                        <span class="tag tag-book">书评</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="articles_prose.html" class="catalog-item" data-date="2024-10-20" data-views="0" data-tag="prose">
+                <div class="item-info">
+                    <h2 class="item-title">秋日的紫金山</h2>
+                    <div class="item-description">一次秋日登山的感悟与思考</div>
+                    <div class="item-meta">
+                        <div class="item-date">
+                            <i class="fas fa-calendar-alt item-icon"></i>
+                            2024-10-20
+                        </div>
+                        <div class="item-views">
+                            <i class="fas fa-eye item-icon"></i>
+                            0次浏览
+                        </div>
+                        <div class="item-category">
+                            <i class="fas fa-tag item-icon"></i>
+                            散文
+                        </div>
+                    </div>
+                    <div class="item-tags">
+                        <span class="tag tag-prose">随笔</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- 分页 -->
+        <div class="pagination">
+            <div class="page-btn prev">上一页</div>
+            <div class="page-btn active">1</div>
+            <div class="page-btn">2</div>
+            <div class="page-btn">3</div>
+            <div class="page-btn next">下一页</div>
+        </div>
+
+        <!-- 相关链接底部 -->
+        <footer class="footer-links">
+            <div class="footer-links-inner">
+                <a href="../index.html" class="footer-link">主页</a>
+                <span class="footer-sep">|</span>
+                <a href="../self_introduction.html" class="footer-link">个人介绍</a>
+                <span class="footer-sep">|</span>
+                <a href="../open_project/open_project.html" class="footer-link">开源项目</a>
+                <span class="footer-sep">|</span>
+                <a href="../photograph_work/photograph_work.html" class="footer-link">摄影作品</a>
+                <span class="footer-sep">|</span>
+                <a href="articles.html" class="footer-link">文章</a>
+                <span class="footer-sep">|</span>
+                <a href="../recommend.html" class="footer-link">推荐资源</a>
+                <span class="footer-sep">|</span>
+                <a href="../message.html" class="footer-link">留言板</a>
+            </div>
+        </footer>
+        <div class="footer-motto">
+            <h3>仰望星空，脚踏实地</h3>
+        </div>
+    </div>
+
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/catalog.js"></script>
+    <script>
+        // 文章页面特定的JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取标签筛选按钮和文章项
+            const tagFilters = document.querySelectorAll('.tag-filter');
+            const articles = document.querySelectorAll('.catalog-item');
+            
+            // 添加标签筛选功能
+            tagFilters.forEach(filter => {
+                filter.addEventListener('click', function() {
+                    // 移除所有筛选器的活动状态
+                    tagFilters.forEach(f => f.classList.remove('active'));
+                    
+                    // 设置当前筛选器为活动状态
+                    this.classList.add('active');
+                    
+                    const selectedTag = this.getAttribute('data-tag');
+                    
+                    // 筛选文章
+                    articles.forEach(article => {
+                        if (selectedTag === 'all' || article.getAttribute('data-tag') === selectedTag) {
+                            article.style.display = 'flex';
+                        } else {
+                            article.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

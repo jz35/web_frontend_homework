@@ -1,0 +1,60 @@
+.catalog-item {
+    border-left: 4px solid #2C3E50;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #fff;
+}
+
+.catalog-item:hover {
+    transform: translateX(5px);
+    border-left-color: #E67E22;
+}
+
+.item-title {
+    color: #2C3E50;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/* 项目技术标签样式 */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.project-tag {
+    background-color: #ecf0f1;
+    color: #2C3E50;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* 项目描述样式 */
+.item-description {
+    margin: 8px 0 12px 0;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* 项目统计信息样式 */
+.project-stats {
+    display: flex;
+    gap: 15px;
+    margin-top: 8px;
+}
+
+.project-stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    color: #7F8C8D;
+}
+
+.project-stat i {
+    color: #E67E22;
+} 

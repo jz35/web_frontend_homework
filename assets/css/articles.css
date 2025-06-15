@@ -1,0 +1,92 @@
+.item-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.tag {
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: white;
+    background-color: #6c757d;
+}
+
+.tag-diary {
+    background-color: #28a745;
+}
+
+.tag-paper {
+    background-color: #007bff;
+}
+
+.tag-book {
+    background-color: #6610f2;
+}
+
+.tag-film {
+    background-color: #e83e8c;
+}
+
+.tag-prose {
+    background-color: #fd7e14;
+}
+
+/* 文章筛选相关样式 */
+.filter-container {
+    margin-bottom: 20px;
+}
+
+.filter-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.tag-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag-filter {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: white;
+    background-color: #6c757d;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tag-filter:hover {
+    opacity: 0.9;
+}
+
+.tag-filter.active {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px currentColor;
+}
+
+.tag-filter-all { background-color: #343a40; }
+.tag-filter-diary { background-color: #28a745; }
+.tag-filter-paper { background-color: #007bff; }
+.tag-filter-book { background-color: #6610f2; }
+.tag-filter-film { background-color: #e83e8c; }
+.tag-filter-prose { background-color: #fd7e14; }
+
+/* 文章列表项特定样式 */
+.catalog-item {
+    border-left: 4px solid #6c757d;
+    transition: transform 0.3s, box-shadow 0.3s, border-left-color 0.3s;
+}
+
+.catalog-item:hover {
+    transform: translateX(5px);
+}
+
+.catalog-item[data-tag="diary"] { border-left-color: #28a745; }
+.catalog-item[data-tag="paper"] { border-left-color: #007bff; }
+.catalog-item[data-tag="book"] { border-left-color: #6610f2; }
+.catalog-item[data-tag="film"] { border-left-color: #e83e8c; }
+.catalog-item[data-tag="prose"] { border-left-color: #fd7e14; } 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>劳动体验：校园生活模拟 - zjz的个人网站</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/article.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+</head>
+<body class="project-theme">
+    <a href="open_project.html" class="back-btn">返回开源项目</a>
+    
+    <div class="main-content">
+        <div class="article-container">
+            <h1>劳动体验：校园生活模拟</h1>
+            <div class="article-meta">
+                <span>作者：jz35</span> |
+                <span>2025-05-05</span>
+            </div>
+            <div class="article-content">
+                <h2>项目链接</h2>
+                <p>
+                    <a href="https://github.com/jz35/AI_galgame" target="_blank" rel="noopener">https://github.com/jz35/AI_galgame</a>
+                </p>
+                <h2>游戏简介</h2>
+                <p>一款以校园劳动教育为主题的视觉小说游戏，让玩家体验不同岗位的劳动，理解劳动的价值。</p>
+                <p>在这款游戏中，玩家将扮演一名学生，通过体验食堂、保洁和园丁三种不同的劳动岗位，了解劳动工作者的辛勤付出，感受劳动的意义。</p>
+                <p>游戏采用视觉小说的形式，玩家通过点击屏幕推进故事剧情。每个章节完成后可以解锁下一章节，完成所有三个劳动体验章节后解锁终章内容。</p>
+                <h2>游戏特点</h2>
+                <ul>
+                    <li><b>三个劳动体验章节</b>：食堂、保洁、园丁，每个章节展示不同的劳动内容和意义</li>
+                    <li><b>角色选择</b>：可选择男性或女性角色进行游戏</li>
+                    <li><b>分支剧情</b>：体验不同劳动岗位的日常与困境</li>
+                    <li><b>打字机效果</b>：对话文本逐字显示，增强沉浸感</li>
+                    <li><b>简约界面</b>：清晰直观的游戏界面，专注于故事体验</li>
+                    <li><b>响应式布局</b>：适配不同尺寸的屏幕</li>
+                </ul>
+                <h2>技术实现</h2>
+                <p>游戏使用纯前端技术实现：</p>
+                <ul>
+                    <li>HTML5：游戏页面结构</li>
+                    <li>CSS3：游戏界面样式和动画效果</li>
+                    <li>JavaScript：游戏逻辑和对话系统</li>
+                    <li>localStorage：用于保存游戏进度和章节完成状态</li>
+                </ul>
+                <h2>如何运行</h2>
+                <ol>
+                    <li>克隆或下载本仓库</li>
+                    <li>使用现代浏览器（Chrome、Firefox、Edge等）直接打开 <code>index.html</code> 文件</li>
+                    <li>开始游戏体验</li>
+                </ol>
+                <h2>目录结构</h2>
+                <pre><code>labor-galgame/
+├── index.html                    # 游戏主入口页（封面/开始按钮）
+├── character_select.html         # 角色选择界面
+├── level.html                    # 关卡选择界面
+├── credits.html                  # 制作人员页面
+├── chapter/                      # 各关卡HTML文件
+│   ├── intro.html               # 序章页面
+│   ├── chapter1.html            # 第一关：食堂体验
+│   ├── chapter2.html            # 第二关：保洁体验
+│   ├── chapter3.html            # 第三关：园丁体验
+│   └── ending.html              # 终章页面
+├── script/                       # 脚本文件
+│   ├── engine.js                # 通用游戏引擎逻辑（对话推进、立绘切换等）
+│   ├── intro.js                 # 序章脚本
+│   ├── chapter1.js              # 第一关脚本
+│   ├── chapter2.js              # 第二关脚本
+│   ├── chapter3.js              # 第三关脚本
+│   └── ending.js                # 终章脚本
+├── style/                        # 样式文件
+│   └── main.css                 # 通用样式（文本框、立绘位置、背景图等）
+├── img/                          # 图片资源
+│   ├── bg/                      # 背景图
+│   ├── char/                    # 角色立绘图
+│   └── ui/                      # UI 图标
+└── README.md                     # 项目说明
+</code></pre>
+            </div>
+        </div>
+        
+        <div class="footer-motto">
+            <h3>仰望星空，脚踏实地</h3>
+        </div>
+    </div>
+</body>
+</html>

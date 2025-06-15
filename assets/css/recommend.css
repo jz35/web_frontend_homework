@@ -1,0 +1,48 @@
+/* 推荐资源页面样式 */
+.recommend-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 32px;
+    padding: 40px 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.recommend-block {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 28px 24px 20px 24px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+}
+.recommend-block h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #1976d2;
+    font-size: 22px;
+}
+.recommend-block ul {
+    padding-left: 18px;
+    margin: 0;
+}
+.recommend-block li {
+    margin-bottom: 8px;
+    color: #444;
+}
+.recommend-block a {
+    color: #1976d2;
+    text-decoration: none;
+}
+.recommend-block a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 900px) {
+    .recommend-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        gap: 20px;
+        padding: 20px 0;
+    }
+} 

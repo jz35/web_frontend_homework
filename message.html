@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言板</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/message.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+</head>
+<body class="personal-theme">
+    <!-- 菜单按钮 -->
+    <div class="toggle-btn" id="toggleBtn">☰</div>
+    <!-- 侧边栏 -->
+    <div class="sidebar" id="sidebar">
+        <div class="profile">
+            <div class="name">zjz</div>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html">主页</a></li>
+            <li><a href="self_introduction.html">个人介绍</a></li>
+            <li><a href="open_project/open_project.html">开源项目</a></li>
+            <li><a href="photograph_work/photograph_work.html">摄影作品</a></li>
+            <li><a href="articles/articles.html">文章</a></li>
+            <li><a href="recommend.html">推荐资源</a></li>
+            <li><a href="message.html" class="active">留言板</a></li>
+        </ul>
+    </div>
+    <!-- 主内容区域 -->
+    <div class="main-content" id="mainContent">
+        <div class="msg-box">
+            <div class="msg-title">留言板</div>
+            <form class="msg-form" id="msgForm" autocomplete="off">
+                <textarea id="content" placeholder="请输入留言内容..." maxlength="200" required></textarea>
+                <button type="submit">提交</button>
+            </form>
+            <div class="msg-list" id="msgList"></div>
+        </div>
+        <!-- 底部 -->
+        <footer class="footer-links">
+            <div class="footer-links-inner">
+                <a href="index.html" class="footer-link">主页</a>
+                <span class="footer-sep">|</span>
+                <a href="self_introduction.html" class="footer-link">个人介绍</a>
+                <span class="footer-sep">|</span>
+                <a href="open_project/open_project.html" class="footer-link">开源项目</a>
+                <span class="footer-sep">|</span>
+                <a href="photograph_work/photograph_work.html" class="footer-link">摄影作品</a>
+                <span class="footer-sep">|</span>
+                <a href="articles/articles.html" class="footer-link">文章</a>
+                <span class="footer-sep">|</span>
+                <a href="recommend.html" class="footer-link">推荐资源</a>
+                <span class="footer-sep">|</span>
+                <a href="message.html" class="footer-link">留言板</a>
+            </div>
+        </footer>
+        <div class="footer-motto">
+            <h3>仰望星空，脚踏实地</h3>
+        </div>
+    </div>
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/catalog.js"></script>
+    <script>
+        // 留言功能
+        const msgForm = document.getElementById('msgForm');
+        const msgList = document.getElementById('msgList');
+        msgForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const content = document.getElementById('content').value.trim();
+            if (!content) return;
+            const item = document.createElement('div');
+            item.className = 'msg-item';
+            item.textContent = content;
+            msgList.prepend(item);
+            msgForm.reset();
+        });
+    </script>
+</body>
+</html>
